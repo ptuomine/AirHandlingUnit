@@ -26,7 +26,7 @@ namespace ProgmanTest
             parts.Add(Filter.GetTheShortFilter());
             parts.Add(Filter.GetTheLongFilter());
             parts.Add(Coil.GetTheHighPowerCoil());
-            parts.Add(HeatExchanger.GetShellHeatExchanger(power: 200));
+            parts.Add(HeatExchanger.GetShellHeatExchanger());
 
             return parts;
         }
@@ -54,6 +54,11 @@ namespace ProgmanTest
             var parts = ThreeFanUnitParts();
                 parts.Add(Battery.GetHighCapacityBattery());
             return new AirHeaterUnit(parts);
+        }
+
+        public AirHeaterUnit BuildCustomUnit()
+        {
+            return null;
         }
 
     }
