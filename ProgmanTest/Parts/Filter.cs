@@ -10,7 +10,7 @@ namespace ProgmanTest
     {
         public int Length { get; set; }
 
-        public Filter(string pc, string desc, int length) : base(pc, desc)
+        private Filter(string pc, string desc, int length) : base(pc, desc)
         {
             this.Length = length;
         }
@@ -20,5 +20,21 @@ namespace ProgmanTest
             Console.WriteLine("Filter properties:");
             Console.WriteLine("Length: " + Length);
         }
+
+        #region Factory Methods
+        private static readonly Filter shortFilter = new Filter(pc: "FIL1", desc: "short filter", length: 20);
+        private static readonly Filter longFilter = new Filter(pc: "FIL2", desc: "long filter", length: 30);
+
+        public static Filter GetTheShortFilter()
+        {
+            return shortFilter;
+        }
+
+        public static Filter GetTheLongFilter()
+        {
+            return longFilter;
+        }
+        #endregion
+
     }
 }

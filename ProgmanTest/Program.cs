@@ -10,9 +10,10 @@ namespace ProgmanTest
     {
         static void Main(string[] args)
         {
-            var twofanunit = new AirHeaterUnitBuilder().BuildTwoFanUnit();
-            var threefanunit = new AirHeaterUnitBuilder().BuildTwoFanUnit();
-            var threefanunitwithbattery = new AirHeaterUnitBuilder().BuildThreeFanUnitWithBattery();
+            var builder = AirHeaterUnitBuilder.Instance();
+            var twofanunit = builder.BuildTwoFanUnit();
+            var threefanunit = builder.BuildThreeFanUnit();
+            var threefanunitwithbattery = builder.BuildThreeFanUnitWithBattery();
 
 
             Console.WriteLine("Two Fan Unit:");
@@ -21,7 +22,7 @@ namespace ProgmanTest
             Console.WriteLine("Three Fan Unit:");
             threefanunit.PrintToConsole();
             Console.WriteLine();
-            Console.WriteLine("Three Fan Unit:");
+            Console.WriteLine("Three Fan Unit with Battery:");
             threefanunitwithbattery.PrintToConsole();
             Console.WriteLine("Type any key to exit");
             Console.ReadKey();

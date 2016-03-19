@@ -8,15 +8,25 @@ namespace ProgmanTest
 {
     class AirHeaterUnitBuilder
     {
+        private static AirHeaterUnitBuilder instance;
+        private AirHeaterUnitBuilder(){ }
+        public static AirHeaterUnitBuilder Instance()
+        {
+            if (instance == null)
+            {
+                instance = new AirHeaterUnitBuilder();
+            }
+            return instance;
+        }
         private List<Part> TwoFanUnitParts()
         {
             var parts = new List<Part>();
-            parts.Add(new Fan(pc: "FAN1", desc: "this is the first fan", fantype: Fan.FanTypes.box));
-            parts.Add(new Fan(pc: "FAN2", desc: "this is the second fan", fantype: Fan.FanTypes.floor));
-            parts.Add(new Filter(pc: "FIL1", desc: "this ís the first filter", length: 20));
-            parts.Add(new Filter(pc: "FIL2", desc: "this ís the second filter", length: 30));
-            parts.Add(new Coil(pc: "COIL1", desc: "this is the coil", power: 100));
-            parts.Add(new HeatExchanger(pc: "HE1", desc: "this is the heat exchanger", power: 200, type: HeatExchanger.HeatExchangerTypes.Shell));
+            parts.Add(Fan.GetTheBoxFan());
+            parts.Add(Fan.GetTheFloorFan());
+            parts.Add(Filter.GetTheShortFilter());
+            parts.Add(Filter.GetTheLongFilter());
+            parts.Add(Coil.GetTheHighPowerCoil());
+            parts.Add(HeatExchanger.GetShellHeatExchanger(power: 200));
 
             return parts;
         }
@@ -24,7 +34,7 @@ namespace ProgmanTest
         private List<Part> ThreeFanUnitParts()
         {
             var parts = TwoFanUnitParts();
-            parts.Add(new Fan(pc: "FAN3", desc: "this is the third fan", fantype: Fan.FanTypes.box));
+            parts.Add(Fan.GetTheBoxFan());
 
             return parts;
         }
@@ -42,7 +52,7 @@ namespace ProgmanTest
         public AirHeaterUnit BuildThreeFanUnitWithBattery()
         {
             var parts = ThreeFanUnitParts();
-                parts.Add(new Battery(pc: "BAT1", desc: "Backup power", capacity: 60));
+                parts.Add(Battery.GetHighCapacityBattery());
             return new AirHeaterUnit(parts);
         }
 

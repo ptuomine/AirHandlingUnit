@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProgmanTest
 {
-    class Part
+    abstract class Part
     {
         public Part(string pc, string desc)
         {
