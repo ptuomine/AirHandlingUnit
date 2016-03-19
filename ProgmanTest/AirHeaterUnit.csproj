@@ -43,8 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AirHeaterUnit.cs" />
-    <Compile Include="AirHeaterUnitBuilder.cs" />
+    <Compile Include="AirHandlingUnit.cs" />
+    <Compile Include="AirHandlingUnitBuilder.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Part.cs" />
     <Compile Include="PartsFactory.cs" />

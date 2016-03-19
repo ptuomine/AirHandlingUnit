@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProgmanTest
+namespace AirHandlingUnit
 {
     class Coil : PowerPart
     {

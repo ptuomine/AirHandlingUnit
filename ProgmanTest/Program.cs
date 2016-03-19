@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProgmanTest
+namespace AirHandlingUnit
 {
     class Program
     {
         static void Main(string[] args)
         {
-            var builder = AirHeaterUnitBuilder.Instance();
+            var builder = AirHandlingUnitBuilder.Instance();
             var twofanunit = builder.BuildTwoFanUnit();
             var threefanunit = builder.BuildThreeFanUnit();
             var threefanunitwithbattery = builder.BuildThreeFanUnitWithBattery();

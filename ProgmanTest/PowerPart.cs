@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProgmanTest
+namespace AirHandlingUnit
 {
-    abstract class PowerPart : Part
+    public abstract class PowerPart : Part
     {
         public int Power { get; set; }
 

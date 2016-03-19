@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProgmanTest
+namespace AirHandlingUnit
 {
-    class AirHeaterUnit
+    class AirHandlingUnit
     {
         private readonly List<Part> parts;
 
-        public AirHeaterUnit(List<Part> parts)
+        public AirHandlingUnit(List<Part> parts)
         {
             this.parts = parts;
         }

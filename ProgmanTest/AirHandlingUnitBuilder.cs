@@ -4,17 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProgmanTest
+namespace AirHandlingUnit
 {
-    class AirHeaterUnitBuilder
+    class AirHandlingUnitBuilder
     {
-        private static AirHeaterUnitBuilder instance;
-        private AirHeaterUnitBuilder(){ }
-        public static AirHeaterUnitBuilder Instance()
+        private static AirHandlingUnitBuilder instance;
+        private AirHandlingUnitBuilder(){ }
+        public static AirHandlingUnitBuilder Instance()
         {
             if (instance == null)
             {
-                instance = new AirHeaterUnitBuilder();
+                instance = new AirHandlingUnitBuilder();
             }
             return instance;
         }
@@ -39,24 +39,24 @@ namespace ProgmanTest
             return parts;
         }
 
-        public AirHeaterUnit BuildTwoFanUnit()
+        public AirHandlingUnit BuildTwoFanUnit()
         {
-            return new AirHeaterUnit(TwoFanUnitParts());
+            return new AirHandlingUnit(TwoFanUnitParts());
         }
 
-        public AirHeaterUnit BuildThreeFanUnit()
+        public AirHandlingUnit BuildThreeFanUnit()
         {
-            return new AirHeaterUnit(ThreeFanUnitParts());
+            return new AirHandlingUnit(ThreeFanUnitParts());
         }
 
-        public AirHeaterUnit BuildThreeFanUnitWithBattery()
+        public AirHandlingUnit BuildThreeFanUnitWithBattery()
         {
             var parts = ThreeFanUnitParts();
                 parts.Add(Battery.GetHighCapacityBattery());
-            return new AirHeaterUnit(parts);
+            return new AirHandlingUnit(parts);
         }
 
-        public AirHeaterUnit BuildCustomUnit()
+        public AirHandlingUnit BuildCustomUnit()
         {
             return null;
         }

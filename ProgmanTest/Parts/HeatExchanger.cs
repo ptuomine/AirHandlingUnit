@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProgmanTest
+namespace AirHandlingUnit
 {
-    class HeatExchanger : PowerPart
+    public class HeatExchanger : PowerPart
     {
         private static int lastUsedProductCode = 0;
         private static Dictionary<string, HeatExchanger> CustomHeatExchangers = new Dictionary<string, HeatExchanger>();
