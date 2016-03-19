@@ -10,7 +10,7 @@ namespace ProgmanTest
     {
         static void Main(string[] args)
         {
-            var unit = new AirHeaterUnitBuilder().BuildUnit();
+            var unit = new AirHeaterUnitBuilder().BuildTwoFanUnit();
             unit.PrintToConsole();
 
             Console.WriteLine("Type any key to exit");

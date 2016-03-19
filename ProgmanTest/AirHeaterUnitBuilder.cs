@@ -8,7 +8,7 @@ namespace ProgmanTest
 {
     class AirHeaterUnitBuilder
     {
-        public AirHeaterUnit BuildUnit()
+        private List<Part> TwoFanUnitParts()
         {
             var parts = new List<Part>();
             parts.Add(new Fan(pc: "FAN1", desc: "this is the first fan", fantype: Fan.FanTypes.box));
@@ -18,7 +18,26 @@ namespace ProgmanTest
             parts.Add(new Coil(pc: "COIL1", desc: "this is the coil", power: 100));
             parts.Add(new HeatExchanger(pc: "HE1", desc: "this is the heat exchanger", power: 200, type: HeatExchanger.HeatExchangerTypes.Shell));
 
-            return new AirHeaterUnit(parts);
+            return parts;
         }
+
+        private List<Part> ThreeFanUnitParts()
+        {
+            var parts = TwoFanUnitParts();
+            parts.Add(new Fan(pc: "FAN3", desc: "this is the third fan", fantype: Fan.FanTypes.box));
+
+            return parts;
+        }
+
+        public AirHeaterUnit BuildTwoFanUnit()
+        {
+            return new AirHeaterUnit(TwoFanUnitParts());
+        }
+
+        public AirHeaterUnit BuildThreeFanUnit()
+        {
+            return new AirHeaterUnit(ThreeFanUnitParts());
+        }
+
     }
 }
