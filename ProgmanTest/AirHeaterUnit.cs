@@ -17,7 +17,9 @@ namespace ProgmanTest
 
         internal void PrintToConsole()
         {
-            foreach (var part in parts)
+            var sortedparts = parts.OrderBy(p => p.ProductCode);
+
+            foreach (var part in sortedparts)
             {
                 part.PrintToConsole();
             }

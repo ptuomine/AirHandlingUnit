@@ -39,5 +39,12 @@ namespace ProgmanTest
             return new AirHeaterUnit(ThreeFanUnitParts());
         }
 
+        public AirHeaterUnit BuildThreeFanUnitWithBattery()
+        {
+            var parts = ThreeFanUnitParts();
+                parts.Add(new Battery(pc: "BAT1", desc: "Backup power", capacity: 60));
+            return new AirHeaterUnit(parts);
+        }
+
     }
 }

@@ -47,7 +47,11 @@
     <Compile Include="AirHeaterUnitBuilder.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Part.cs" />
-    <Compile Include="Parts.cs" />
+    <Compile Include="Parts\Coil.cs" />
+    <Compile Include="Parts\Battery.cs" />
+    <Compile Include="Parts\Filter.cs" />
+    <Compile Include="Parts\HeatExchanger.cs" />
+    <Compile Include="Parts\Fan.cs" />
     <Compile Include="PowerPart.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
