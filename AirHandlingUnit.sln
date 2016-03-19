@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirHeaterUnit", "ProgmanTest\AirHeaterUnit.csproj", "{CD9FFCD4-0D2B-4031-B981-C723281FACEA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirHandlingUnit", "AirHandlingUnit\AirHandlingUnit.csproj", "{CD9FFCD4-0D2B-4031-B981-C723281FACEA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirHandlingUnit.Test", "AirHandlingUnit.Test\AirHandlingUnit.Test.csproj", "{4DDA2D10-BBAD-46B9-9205-29BF6567ADF2}"
 EndProject
