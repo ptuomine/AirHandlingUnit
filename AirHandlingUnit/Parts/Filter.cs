@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AirHandlingUnit
 {
-    class Filter : Part
+    public class Filter : Part
     {
         public int Length { get; set; }
 

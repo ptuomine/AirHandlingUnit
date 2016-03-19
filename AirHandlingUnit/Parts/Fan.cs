@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AirHandlingUnit
 {
-    class Fan : Part
+    public class Fan : Part
     {
         public enum FanTypes { Box, Floor }
         public FanTypes FanType { get; set; }
@@ -36,5 +36,10 @@ namespace AirHandlingUnit
             return floorFan;
         }
         #endregion
+
+        public List<Fan> GetAllFans()
+        {
+            return new List<Fan>();
+        }
     }
 }

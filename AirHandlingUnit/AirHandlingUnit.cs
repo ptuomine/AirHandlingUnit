@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AirHandlingUnit
 {
-    class AirHandlingUnit
+    public class AirHandlingUnit
     {
         private readonly List<Part> parts;
 

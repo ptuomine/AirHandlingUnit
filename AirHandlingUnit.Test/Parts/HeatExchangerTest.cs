@@ -10,7 +10,7 @@ namespace AirHandlingUnit.Test
         [TestMethod]
         public void TestGetCustomHeatExchangerMethod()
         {
-            var exchanger = HeatExchanger.GetCustomHeatExchanger("My Really Powerful Heat Exchanger", 1000, HeatExchanger.HeatExchangerTypes.Tube);
+            var exchanger = HeatExchangerFactory.GetCustomHeatExchanger("My Really Powerful Heat Exchanger", 1000, HeatExchanger.HeatExchangerTypes.Tube);
 
             Assert.IsNotNull(exchanger);
         }
@@ -18,8 +18,8 @@ namespace AirHandlingUnit.Test
         [TestMethod]
         public void TestGetCustomHeatExchangerMethodEqualObjects()
         {
-            var exchanger1 = HeatExchanger.GetCustomHeatExchanger("My Really Powerful Heat Exchanger", 1000, HeatExchanger.HeatExchangerTypes.Tube);
-            var exchanger2 = HeatExchanger.GetCustomHeatExchanger("My Really Powerful Heat Exchanger", 1000, HeatExchanger.HeatExchangerTypes.Tube);
+            var exchanger1 = HeatExchangerFactory.GetCustomHeatExchanger("My Really Powerful Heat Exchanger", 1000, HeatExchanger.HeatExchangerTypes.Tube);
+            var exchanger2 = HeatExchangerFactory.GetCustomHeatExchanger("My Really Powerful Heat Exchanger", 1000, HeatExchanger.HeatExchangerTypes.Tube);
 
             Assert.IsNotNull(exchanger1);
             Assert.IsNotNull(exchanger2);
@@ -30,8 +30,8 @@ namespace AirHandlingUnit.Test
         [TestMethod]
         public void TestGetCustomHeatExchangerMethodNotEqualObjects()
         {
-            var exchanger1 = HeatExchanger.GetCustomHeatExchanger("My Really Powerful Heat Exchanger", 1000, HeatExchanger.HeatExchangerTypes.Tube);
-            var exchanger2 = HeatExchanger.GetCustomHeatExchanger("My Really Powerful Heat Exchanger", 1001, HeatExchanger.HeatExchangerTypes.Tube);
+            var exchanger1 = HeatExchangerFactory.GetCustomHeatExchanger("My Really Powerful Heat Exchanger", 1000, HeatExchanger.HeatExchangerTypes.Tube);
+            var exchanger2 = HeatExchangerFactory.GetCustomHeatExchanger("My Really Powerful Heat Exchanger", 1001, HeatExchanger.HeatExchangerTypes.Tube);
 
             Assert.IsNotNull(exchanger1);
             Assert.IsNotNull(exchanger2);

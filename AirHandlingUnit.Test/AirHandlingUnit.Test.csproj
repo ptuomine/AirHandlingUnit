@@ -54,7 +54,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ProgmanTest\AirHeaterUnit.csproj">
+    <ProjectReference Include="..\AirHandlingUnit\AirHandlingUnit.csproj">
       <Project>{cd9ffcd4-0d2b-4031-b981-c723281facea}</Project>
       <Name>AirHeaterUnit</Name>
     </ProjectReference>

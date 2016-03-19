@@ -7,7 +7,7 @@
     <ProjectGuid>{CD9FFCD4-0D2B-4031-B981-C723281FACEA}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ProgmanTest</RootNamespace>
+    <RootNamespace>AirHandlingUnit</RootNamespace>
     <AssemblyName>ProgmanTest</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,12 +46,14 @@
   <ItemGroup>
     <Compile Include="AirHandlingUnit.cs" />
     <Compile Include="AirHandlingUnitBuilder.cs" />
+    <Compile Include="AirHandlingUnitRepository.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Part.cs" />
     <Compile Include="PartsFactory.cs" />
     <Compile Include="Parts\Coil.cs" />
     <Compile Include="Parts\Battery.cs" />
     <Compile Include="Parts\Filter.cs" />
+    <Compile Include="Parts\HeatExchangerFactory.cs" />
     <Compile Include="Parts\HeatExchanger.cs" />
     <Compile Include="Parts\Fan.cs" />
     <Compile Include="PowerPart.cs" />

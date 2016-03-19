@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AirHandlingUnit
 {
-    class Battery : Part
+    public class Battery : Part
     {
         public int Capacity { get; set; }
 

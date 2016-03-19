@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AirHandlingUnit
 {
-    class Coil : PowerPart
+    public class Coil : PowerPart
     {
         // Use the factory methods to get Coil objects
         private Coil(string pc, string desc, int power) : base(pc, desc, power)

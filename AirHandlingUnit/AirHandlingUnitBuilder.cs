@@ -26,7 +26,7 @@ namespace AirHandlingUnit
             parts.Add(Filter.GetTheShortFilter());
             parts.Add(Filter.GetTheLongFilter());
             parts.Add(Coil.GetTheHighPowerCoil());
-            parts.Add(HeatExchanger.GetShellHeatExchanger());
+            parts.Add(HeatExchangerFactory.GetShellHeatExchanger());
 
             return parts;
         }
