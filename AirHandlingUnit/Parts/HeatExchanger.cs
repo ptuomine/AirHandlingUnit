@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.Serialization;
-using AirHandlingUnit.Parts;
+using AirHandlingUnits.Parts;
 
-namespace AirHandlingUnit
+namespace AirHandlingUnits
 {
     [DataContract]
     public class HeatExchanger : PowerPart

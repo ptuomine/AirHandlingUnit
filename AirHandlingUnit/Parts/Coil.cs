@@ -1,11 +1,11 @@
-using AirHandlingUnit.Parts;
+using AirHandlingUnits.Parts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AirHandlingUnit.Parts
+namespace AirHandlingUnits.Parts
 {
     public class Coil : PowerPart
     {

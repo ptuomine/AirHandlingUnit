@@ -1,18 +1,23 @@
-﻿using AirHandlingUnit.Parts;
+﻿using AirHandlingUnits.Parts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AirHandlingUnit
+namespace AirHandlingUnits
 {
     public class AirHandlingUnitRepository
     {
         private readonly HeatExchangerFactory heatExchangerFactoryInstance = HeatExchangerFactory.GetInstance();
-        public List<AirHandlingUnit> GetAllAirHandlingUnits()
+
+        public AirHandlingUnit CreateNewAirHandlingUnit(string description, List<Part> parts)
         {
-            return new List<AirHandlingUnit>();
+            return AirHandlingUnitBuilder.GetInstance().BuildCustomAirHandlingUnit(parts);
+        }
+        public AirHandlingUnitCollection GetAllCustomAirHandlingUnits()
+        {
+            return AirHandlingUnitBuilder.GetInstance().GetAllAirHandlingUnits();
         }
 
         public List<Fan> GetAllCustomFans()

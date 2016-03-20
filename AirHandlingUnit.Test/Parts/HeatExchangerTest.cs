@@ -1,8 +1,8 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using AirHandlingUnit;
+using AirHandlingUnits;
 
-namespace AirHandlingUnit.Test
+namespace AirHandlingUnits.Test
 {
     [TestClass]
     public class HeatExchangerTest

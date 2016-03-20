@@ -48,8 +48,10 @@
     <Compile Include="AirHandlingUnitBuilder.cs" />
     <Compile Include="AirHandlingUnitRepository.cs" />
     <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="AirHandlingUnitCollection.cs" />
+    <Compile Include="Parts\PartsCollection.cs" />
+    <Compile Include="Parts\HeatExchangerCollection.cs" />
     <Compile Include="Parts\Part.cs" />
-    <Compile Include="PartsFactory.cs" />
     <Compile Include="Parts\Coil.cs" />
     <Compile Include="Parts\Battery.cs" />
     <Compile Include="Parts\Filter.cs" />

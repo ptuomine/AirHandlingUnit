@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AirHandlingUnit
+namespace AirHandlingUnits
 {
     class Program
     {
         static void Main(string[] args)
         {
-            var builder = AirHandlingUnitBuilder.Instance();
+            var builder = AirHandlingUnitBuilder.GetInstance();
             var twofanunit = builder.BuildTwoFanUnit();
             var threefanunit = builder.BuildThreeFanUnit();
             var threefanunitwithbattery = builder.BuildThreeFanUnitWithBattery();

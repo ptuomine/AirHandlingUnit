@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AirHandlingUnit.Parts
+namespace AirHandlingUnits.Parts
 {
     public class ProductCodeManager
     {

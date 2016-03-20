@@ -1,17 +1,17 @@
-using AirHandlingUnit.Parts;
+using AirHandlingUnits.Parts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AirHandlingUnit
+namespace AirHandlingUnits
 {
     class AirHandlingUnitBuilder
     {
         private static AirHandlingUnitBuilder instance;
         private AirHandlingUnitBuilder(){ }
-        public static AirHandlingUnitBuilder Instance()
+        public static AirHandlingUnitBuilder GetInstance()
         {
             if (instance == null)
             {
@@ -19,6 +19,17 @@ namespace AirHandlingUnit
             }
             return instance;
         }
+
+        internal AirHandlingUnit BuildCustomAirHandlingUnit(List<Part> parts)
+        {
+            return new AirHandlingUnit(parts);
+        }
+
+        internal AirHandlingUnitCollection GetAllAirHandlingUnits()
+        {
+            throw new NotImplementedException();
+        }
+
         private List<Part> TwoFanUnitParts()
         {
             var parts = new List<Part>();
