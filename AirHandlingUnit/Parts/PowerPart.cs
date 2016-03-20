@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AirHandlingUnit
+namespace AirHandlingUnit.Parts
 {
     [DataContract]
     public abstract class PowerPart : Part

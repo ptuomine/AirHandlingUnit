@@ -1,10 +1,11 @@
-﻿using System;
+﻿using AirHandlingUnit.Parts;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AirHandlingUnit
+namespace AirHandlingUnit.Parts
 {
     public class Fan : Part
     {

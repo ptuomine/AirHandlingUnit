@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AirHandlingUnit.Parts;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,7 @@ namespace AirHandlingUnit
 {
     public class AirHandlingUnitRepository
     {
+        private readonly HeatExchangerFactory heatExchangerFactoryInstance = HeatExchangerFactory.GetInstance();
         public List<AirHandlingUnit> GetAllAirHandlingUnits()
         {
             return new List<AirHandlingUnit>();
@@ -20,12 +22,12 @@ namespace AirHandlingUnit
 
         public HeatExchangerCollection GetAllCustomHeatExchangers()
         {
-            return HeatExchangerFactory.GetAllCustomHeatExchangers();
+            return heatExchangerFactoryInstance.GetAllCustomHeatExchangers();
         }
 
         public HeatExchanger GetCustomHeatExchanger(string description, int power, HeatExchanger.HeatExchangerTypes heatExchangerType)
         {
-            return HeatExchangerFactory.GetCustomHeatExchanger(description, power, heatExchangerType);
+            return heatExchangerFactoryInstance.GetCustomHeatExchanger(description, power, heatExchangerType);
         }
     }
 }

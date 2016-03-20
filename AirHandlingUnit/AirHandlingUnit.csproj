@@ -48,7 +48,7 @@
     <Compile Include="AirHandlingUnitBuilder.cs" />
     <Compile Include="AirHandlingUnitRepository.cs" />
     <Compile Include="GlobalSuppressions.cs" />
-    <Compile Include="Part.cs" />
+    <Compile Include="Parts\Part.cs" />
     <Compile Include="PartsFactory.cs" />
     <Compile Include="Parts\Coil.cs" />
     <Compile Include="Parts\Battery.cs" />
@@ -56,7 +56,8 @@
     <Compile Include="Parts\HeatExchangerFactory.cs" />
     <Compile Include="Parts\HeatExchanger.cs" />
     <Compile Include="Parts\Fan.cs" />
-    <Compile Include="PowerPart.cs" />
+    <Compile Include="Parts\ProductCodeManager.cs" />
+    <Compile Include="Parts\PowerPart.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
