@@ -21,6 +21,19 @@ var getAllHeatExchangerParts = function () {
     });
 }
 
+var addAirHandlingUnit = function () {
+
+}
+
+var addFan = function () {
+
+}
+
+var addFilter = function () {
+
+}
+
+
 var addHeatExchangerPart = function () {
 
     var he = {

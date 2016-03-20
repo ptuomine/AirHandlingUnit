@@ -3,39 +3,69 @@
 <script src="Scripts/bootstrap.min.js"></script>
 <script src="Scripts/Main/backend.js"></script>
 <script src="Scripts/Main/main.js"></script>
-
-<div>
-    <h1>Air Handling Units</h1>
-    <p><a class="btn btn-default" onClick="getAllAirHandlingUnits()">Get All</a></p>
-    <ul id="AirHandlingUnitList">
-    </ul>
-</div>
+<br/>
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-3">
         <div class="panel panel-default">
             <div class="panel-heading">
 
-            <h3 class="panel-title">Heat Exchangers</h3><br />
-            <div>
-                <span>Description:</span><br />
-                <input id="HeatExchangerDescription" type="text" /><br />
-                Power:<br />
-                <input id="HeatExchangerPower" type="text" /><br />
-                Type:<br />
-                <select id="selectHeatExchangerType">
-                    <option value="Shell">Shell</option>
-                    <option value="Tube">Tube</option>
-                </select><br />
-            </div><br />
-            <p><a class="btn btn-default" onClick="addHeatExchangerPart()">Add New</a></p>
-            <select id="HeatExchangerList" multiple size="10"></select>
+                <h3 class="panel-title">Air Handling Units</h3><br />
+                <div>
+                    <span>Description:</span><br />
+                    <input id="AirHandlingUnitDescription" type="text" /><br />
+                </div><br />
+                <p><a class="btn btn-default btn-sm" onClick="addAirHandlingUnit()">Create New</a></p>
+                <select id="AirHandlingUnitList" multiple size="10"></select>
+            </div>
         </div>
     </div>
-</div>
-    <div class="col-md-4">
-        <h2>Fans</h2>
+    <div class="col-md-3">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+
+                <h3 class="panel-title">Heat Exchangers</h3><br />
+                <div>
+                    <span>Description:</span><br />
+                    <input id="HeatExchangerDescription" type="text" /><br />
+                    Power:<br />
+                    <input id="HeatExchangerPower" type="text" /><br />
+                    Type:<br />
+                    <select id="selectHeatExchangerType">
+                        <option value="Shell">Shell</option>
+                        <option value="Tube">Tube</option>
+                    </select><br />
+                </div><br />
+                <p><a class="btn btn-default btn-sm" onClick="addHeatExchangerPart()">Add New</a></p>
+                <select id="HeatExchangerList" multiple size="10"></select>
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Filters</h2>
+    <div class="col-md-3">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+
+                <h3 class="panel-title">Fans</h3><br />
+                <div>
+                    <span>Description:</span><br />
+                    <input id="FanDescription" type="text" /><br />
+                </div><br />
+                <p><a class="btn btn-default btn-sm" onClick="addFan()">Add New</a></p>
+                <select id="FanList" multiple size="10"></select>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+
+                <h3 class="panel-title">Filters</h3><br />
+                <div>
+                    <span>Description:</span><br />
+                    <input id="FilterDescription" type="text" /><br />
+                </div><br />
+                <p><a class="btn btn-default btn-sm" onClick="addFilter()">Add New</a></p>
+                <select id="FilterList" multiple size="10"></select>
+            </div>
+        </div>
     </div>
 </div>
