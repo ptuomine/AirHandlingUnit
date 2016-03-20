@@ -4,7 +4,7 @@
 });
 
 var addNewRow = function (he) {
-    var html = "<li>" + he.ProductCode + " (" + he.Description + ")</li>";
+    var html = "<option>" + he.ProductCode + " (" + he.Description + ")</option>";
     $("#HeatExchangerList").append(html);
 }
 
