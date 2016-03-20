@@ -44,7 +44,7 @@ namespace AirHandlingUnit
         public static HeatExchanger GetCustomHeatExchanger(string desc, int power, HeatExchanger.HeatExchangerTypes type)
         {
             // First try to find an instance with the given specifications
-            var found = CustomHeatExchangers.Values.Where(he => he.Power == power && he.HeatExchangerType == type).FirstOrDefault();
+            var found = CustomHeatExchangers.Values.Where(he => he.Description == desc && he.Power == power && he.HeatExchangerType == type).FirstOrDefault();
             if (found != null)
             {
                 return found;
