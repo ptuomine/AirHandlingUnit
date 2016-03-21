@@ -17,7 +17,7 @@ namespace AirHandlingUnitService.Controllers
         public class AirHandlingUnitRequest
         {
             public string Description { get; set; }
-            public List<HeatExchanger> Parts { get; set; }
+            public List<Part> Parts { get; set; }
         }
 
         [HttpGet]
@@ -29,12 +29,7 @@ namespace AirHandlingUnitService.Controllers
         [HttpGet]
         public AirHandlingUnit Get([FromUri]AirHandlingUnitRequest request)
         {
-            List<Part> partslist = new List<Part>();
-            foreach (var hepart in request.Parts)
-            {
-                partslist.Add(hepart);
-            }
-            return new AirHandlingUnitRepository().CreateNewAirHandlingUnit(request.Description, partslist);
+            return new AirHandlingUnitRepository().CreateNewAirHandlingUnit(request.Description, request.Parts);
         }
     }
 }
