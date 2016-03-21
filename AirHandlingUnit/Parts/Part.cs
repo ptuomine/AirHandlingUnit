@@ -8,8 +8,12 @@ using System.Threading.Tasks;
 namespace AirHandlingUnits.Parts
 {
     [DataContract]
-    public abstract class Part
+    public class Part
     {
+        public Part()
+        {
+        }
+
         public Part(string pc, string desc)
         {
             this.ProductCode = pc;

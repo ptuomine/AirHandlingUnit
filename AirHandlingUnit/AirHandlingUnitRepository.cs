@@ -13,7 +13,7 @@ namespace AirHandlingUnits
 
         public AirHandlingUnit CreateNewAirHandlingUnit(string description, List<Part> parts)
         {
-            return AirHandlingUnitBuilder.GetInstance().BuildCustomAirHandlingUnit(parts);
+            return AirHandlingUnitBuilder.GetInstance().BuildCustomAirHandlingUnit(description, parts);
         }
         public AirHandlingUnitCollection GetAllCustomAirHandlingUnits()
         {

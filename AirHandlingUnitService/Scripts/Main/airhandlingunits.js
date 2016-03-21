@@ -1,4 +1,4 @@
-﻿var addNewRow = function (unit) {
+﻿var addNewRowToAirHandlingUnitList = function (unit) {
     var html = "<option>" + unit.Description + "</option>";
     $("#AirHandlingUnitList").append(html);
 }
@@ -11,9 +11,25 @@ var addAirHandlingUnit = function () {
     parts.push(he);
 
     var unit = {
-        description: $("#AirHandlingDescription").val(),
-        parts: parts,
+        description: $("#AirHandlingUnitDescription").val(),
+        parts: parts
     }
-    sendNewAirHanlingUnitToBackend(unit);
-    addNewRow(unit);
+    sendNewAirHanlingUnitToBackend(unit).then(function() {
+        getAllAirHandlingUnits();
+    });
+}
+
+var getAllAirHandlingUnits = function () {
+
+    getAllAirHandlingUnitsFromBackend().then(function (data) {
+
+        $("#AirHandlingUnitList").empty();
+        var airhandlingunitlist = [];
+
+        $.each(data, function (i, unit) {
+
+            addNewRowToAirHandlingUnitList(unit);
+            airhandlingunitlist.push(unit);
+        });
+    });
 }

@@ -10,6 +10,7 @@ namespace AirHandlingUnits
     class AirHandlingUnitBuilder
     {
         private static AirHandlingUnitBuilder instance;
+        private List<AirHandlingUnit> AllUnits = new List<AirHandlingUnit>(); 
         private AirHandlingUnitBuilder(){ }
         public static AirHandlingUnitBuilder GetInstance()
         {
@@ -20,14 +21,16 @@ namespace AirHandlingUnits
             return instance;
         }
 
-        internal AirHandlingUnit BuildCustomAirHandlingUnit(List<Part> parts)
+        internal AirHandlingUnit BuildCustomAirHandlingUnit(string desc, List<Part> parts)
         {
-            return new AirHandlingUnit(parts);
+            var unit = new AirHandlingUnit(desc, parts);
+            AllUnits.Add(unit);
+            return unit;
         }
 
         internal AirHandlingUnitCollection GetAllAirHandlingUnits()
         {
-            throw new NotImplementedException();
+            return new AirHandlingUnitCollection(AllUnits);
         }
 
         private List<Part> TwoFanUnitParts()
@@ -67,11 +70,5 @@ namespace AirHandlingUnits
                 parts.Add(Battery.GetHighCapacityBattery());
             return new AirHandlingUnit(parts);
         }
-
-        public AirHandlingUnit BuildCustomUnit()
-        {
-            return null;
-        }
-
     }
 }

@@ -4,7 +4,7 @@ var getHeatExchangerFromCache = function(index) {
     return heatexchangerlist[index];
 }
 
-var addNewRow = function (he) {
+var addNewRowToHeatExchangerList = function (he) {
     var html = "<option>" + he.ProductCode + " (" + he.Description + ")</option>";
     $("#HeatExchangerList").append(html);
 }
@@ -18,7 +18,7 @@ var getAllHeatExchangerParts = function () {
 
         $.each(data, function (i, he) {
 
-            addNewRow(he);
+            addNewRowToHeatExchangerList(he);
             heatexchangerlist.push(he);
         });
     });

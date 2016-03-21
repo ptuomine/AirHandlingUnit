@@ -8,11 +8,13 @@ using System.Threading.Tasks;
 namespace AirHandlingUnits.Parts
 {
     [DataContract]
+    [KnownType(typeof(PowerPart))]
     public abstract class PowerPart : Part
     {
         [DataMember]
         public int Power { get; set; }
 
+        public PowerPart():base() { }
         public PowerPart(string pc, string desc, int power) : base(pc, desc)
         {
             Power = power;

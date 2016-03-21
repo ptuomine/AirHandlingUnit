@@ -1,4 +1,12 @@
-﻿var getAllHeatExchangerPartsFromBackend = function () {
+﻿var getAllAirHandlingUnitsFromBackend = function() {
+    var promise = $.Deferred();
+    $.get("api/AirHandlingUnit/GetAll", function (data) {
+        promise.resolve(data.AirHandlingUnits);
+    });
+    return promise;
+};
+
+var getAllHeatExchangerPartsFromBackend = function () {
 
     var promise = $.Deferred();
     $.get("api/HeatExchanger/GetAll", function (data) {
@@ -11,15 +19,15 @@ var sendNewAirHanlingUnitToBackend = function (unit) {
 
     var promise = $.Deferred();
     var data = {
-        Description: encodeURIComponent(he.description),
-        Parts: he.parts
+        Description: encodeURIComponent(unit.description),
+        Parts: unit.parts
     }
     var url = "api/AirHandlingUnit/Get";
 
     $.ajax({
         url: url,
         type: "get", //send it through get method
-        data: data,
+        data: $.param(data),
         success: function (response) {
             promise.resolve(response);
         },

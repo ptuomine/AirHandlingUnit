@@ -9,6 +9,7 @@ using AirHandlingUnits.Parts;
 namespace AirHandlingUnits
 {
     [DataContract]
+    [KnownType(typeof(HeatExchanger))]
     public class HeatExchanger : PowerPart
     {
         public static readonly HeatExchanger ShellHeatExchanger = new HeatExchanger(pc: "HE1", desc: "Shell heat exchanger", power: 200, type: HeatExchanger.HeatExchangerTypes.Shell);
@@ -17,6 +18,8 @@ namespace AirHandlingUnits
         public enum HeatExchangerTypes { Shell, Tube }
         [DataMember]
         public HeatExchangerTypes HeatExchangerType { get; set; }
+
+        public HeatExchanger():base() { }
         public HeatExchanger(string pc, string desc, int power, HeatExchangerTypes type) : base(pc, desc, power)
         {
             this.HeatExchangerType = type;
