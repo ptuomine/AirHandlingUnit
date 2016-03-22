@@ -7,6 +7,9 @@ namespace AirHandlingUnitService.Controllers
 {
     public class AirHandlingUnitController : ApiController
     {
+
+        private readonly AirHandlingUnitRepository repository = AirHandlingUnitRepository.GetInstance();
+
         //private readonly IRepository<Product> _repository;
 
         //public AirHandlingUnitController(IRepository<Product> repository)
@@ -23,13 +26,13 @@ namespace AirHandlingUnitService.Controllers
         [HttpGet]
         public AirHandlingUnitCollection GetAll()
         {
-            return new AirHandlingUnitRepository().GetAllCustomAirHandlingUnits();
+            return repository.GetAllCustomAirHandlingUnits();
         }
 
         [HttpGet]
-        public AirHandlingUnit Get([FromUri]AirHandlingUnitRequest request)
+        public AirHandlingUnits.AirHandlingUnit Get([FromUri]AirHandlingUnitRequest request)
         {
-            return new AirHandlingUnitRepository().CreateNewAirHandlingUnit(request.Description, request.Parts);
+            return repository.CreateNewAirHandlingUnit(request.Description, request.Parts);
         }
     }
 }

@@ -3,6 +3,7 @@
 <script src="Scripts/bootstrap.min.js"></script>
 <script src="Scripts/Main/airhandlingunits.js"></script>
 <script src="Scripts/Main/heatexchangers.js"></script>
+<script src="Scripts/Main/fans.js"></script>
 <script src="Scripts/Main/backend.js"></script>
 <script src="Scripts/Main/main.js"></script>
 <br/>
@@ -50,6 +51,11 @@
                 <div>
                     <span>Description:</span><br />
                     <input id="FanDescription" type="text" /><br />
+                    <select id="selectFanType">
+                        <option value="Box">Box</option>
+                        <option value="Floor">Floor</option>
+                    </select><br />
+
                 </div><br />
                 <p><a class="btn btn-default btn-sm" onClick="addFan()">Add New</a></p>
                 <select id="FanList" multiple size="10"></select>

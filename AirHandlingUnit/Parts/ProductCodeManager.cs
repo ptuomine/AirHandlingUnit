@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AirHandlingUnits.Parts
+﻿namespace AirHandlingUnit.Parts
 {
     public class ProductCodeManager
     {
-        private int lastUsedProductCode = 0;
-        private readonly string productCodePrefix;
+        private int _lastUsedProductCode = 0;
+        private readonly string _productCodePrefix;
+
         public ProductCodeManager(string prefix)
         {
-            this.productCodePrefix = prefix;
+            _productCodePrefix = prefix;
         }
 
         /// <summary>
@@ -22,7 +17,7 @@ namespace AirHandlingUnits.Parts
         /// <returns></returns>
         public string GetNewProductCode()
         {
-            return productCodePrefix + lastUsedProductCode++;
+            return _productCodePrefix + _lastUsedProductCode++;
         }
     }
 }

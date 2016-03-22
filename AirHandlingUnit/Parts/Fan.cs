@@ -2,24 +2,27 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace AirHandlingUnits.Parts
 {
+    [DataContract]
     public class Fan : Part
     {
         public enum FanTypes { Box, Floor }
+        [DataMember]
         public FanTypes FanType { get; set; }
 
-        private Fan(string pc, string desc, FanTypes fantype) : base(pc, desc)
+        public Fan(string pc, string desc, FanTypes fantype) : base(pc, desc)
         {
             this.FanType = fantype;
         }
 
         public override void PrintToConsole()
         {
-            Console.WriteLine("Fan properties:");
+            Console.WriteLine(value: "Fan properties:");
             base.PrintToConsole();
             Console.WriteLine("Type: " + FanType);
         }

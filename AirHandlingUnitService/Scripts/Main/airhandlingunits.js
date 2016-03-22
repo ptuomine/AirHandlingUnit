@@ -1,14 +1,43 @@
 ﻿var addNewRowToAirHandlingUnitList = function (unit) {
-    var html = "<option>" + unit.Description + "</option>";
+
+    var optiontext = unit.Description + " ( parts:";
+    var parts = unit.partcollection.Parts;
+    if (parts) {
+        $.each(parts, function (i, part) {
+            optiontext = optiontext + part.ProductCode + " ";
+        })
+    }
+    optiontext = optiontext + ")";
+    var html = "<option>" + optiontext + "</option>";
     $("#AirHandlingUnitList").append(html);
+}
+
+function getSelectIndexes(options) {
+    var indexes = [];
+    options.each(function (i, o) {
+        if (this.selected) {
+            indexes.push(i);
+        }
+    });
+    return indexes;
 }
 
 var addAirHandlingUnit = function () {
 
     var parts = [];
-    var heindex = $("#HeatExchangerList option:selected").index();
-    var he = getHeatExchangerFromCache(heindex);
-    parts.push(he);
+    var heselect = $("#HeatExchangerList option");
+    var heselected = getSelectIndexes(heselect)
+    $.each(heselected, function (i, heindex) {
+        var he = getHeatExchangerFromCache(heindex);
+        parts.push(he);
+    })
+
+    var fanselect = $("#FanList option");
+    var fanselected = getSelectIndexes(fanselect)
+    $.each(fanselected, function (i, fanindex) {
+        var fan = getFanFromCache(fanindex);
+        parts.push(fan);
+    })
 
     var unit = {
         description: $("#AirHandlingUnitDescription").val(),

@@ -1,16 +1,10 @@
 ﻿$(document).ready(function () {
 
+    getAllFanParts();
     getAllHeatExchangerParts();
     getAllAirHandlingUnits();
+
 });
-
-var addFan = function () {
-
-}
-
-var addFilter = function () {
-
-}
 
 
 

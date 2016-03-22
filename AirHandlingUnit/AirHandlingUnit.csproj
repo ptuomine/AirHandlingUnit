@@ -49,14 +49,14 @@
     <Compile Include="AirHandlingUnitRepository.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="AirHandlingUnitCollection.cs" />
+    <Compile Include="Parts\HeatExchangerFactory.cs" />
     <Compile Include="Parts\PartCollection.cs" />
-    <Compile Include="Parts\PartsCollection.cs" />
     <Compile Include="Parts\HeatExchangerCollection.cs" />
     <Compile Include="Parts\Part.cs" />
     <Compile Include="Parts\Coil.cs" />
     <Compile Include="Parts\Battery.cs" />
     <Compile Include="Parts\Filter.cs" />
-    <Compile Include="Parts\HeatExchangerFactory.cs" />
+    <Compile Include="Parts\PartFactory.cs" />
     <Compile Include="Parts\HeatExchanger.cs" />
     <Compile Include="Parts\Fan.cs" />
     <Compile Include="Parts\ProductCodeManager.cs" />

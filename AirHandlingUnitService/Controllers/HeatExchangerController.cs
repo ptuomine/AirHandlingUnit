@@ -11,6 +11,8 @@ namespace AirHandlingUnitService.Controllers
 {
     public class HeatExchangerController : ApiController
     {
+        private readonly AirHandlingUnitRepository repository = AirHandlingUnitRepository.GetInstance();
+
         //private readonly IRepository<Product> _repository;
 
         //public AirHandlingUnitController(IRepository<Product> repository)
@@ -28,13 +30,13 @@ namespace AirHandlingUnitService.Controllers
         [HttpGet]
         public HeatExchangerCollection GetAll()
         {
-            return new AirHandlingUnitRepository().GetAllCustomHeatExchangers();
+            return repository.GetAllCustomHeatExchangers();
         }
 
         [HttpGet]
         public HeatExchanger Get([FromUri]HeatExchangerRequest request)
         {
-            return new AirHandlingUnitRepository().GetCustomHeatExchanger(request.Description, request.Power, request.HeatExchangerType);
+            return repository.GetCustomHeatExchanger(request.Description, request.Power, request.HeatExchangerType);
         }
 
         // POST api/<controller>
