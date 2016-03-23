@@ -53,7 +53,6 @@
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="AirHandlingUnitCollection.cs" />
     <Compile Include="Parts\PartCollection.cs" />
-    <Compile Include="Parts\HeatExchangerCollection.cs" />
     <Compile Include="Parts\Part.cs" />
     <Compile Include="Parts\Coil.cs" />
     <Compile Include="Parts\Battery.cs" />

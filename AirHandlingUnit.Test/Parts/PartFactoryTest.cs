@@ -8,7 +8,7 @@ using AirHandlingUnits.Parts;
 namespace AirHandlingUnits.Test
 {
     [TestClass]
-    public class HeatExchangerTest
+    public class PartFactoryTest
     {
         private Fan AddNewFan()
         {

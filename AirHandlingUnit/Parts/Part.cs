@@ -10,9 +10,8 @@ namespace AirHandlingUnits.Parts
     [DataContract]
     public class Part
     {
-        public Part()
-        {
-        }
+        // Default, public, parameterless constructor needed for Generics
+        public Part(){}
 
         public Part(string pc, string desc)
         {
@@ -25,10 +24,5 @@ namespace AirHandlingUnits.Parts
         [DataMember]
         public string Description { get; set; }
 
-        public virtual void PrintToConsole()
-        {
-            Console.WriteLine("Product Code: " + ProductCode);
-            Console.WriteLine("Description: " + Description);
-        }
     }
 }

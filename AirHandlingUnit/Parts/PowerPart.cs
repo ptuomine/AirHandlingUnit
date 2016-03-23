@@ -14,15 +14,11 @@ namespace AirHandlingUnits.Parts
         [DataMember]
         public int Power { get; set; }
 
+        // Default, public, parameterless constructor needed for Generics
         public PowerPart():base() { }
         public PowerPart(string pc, string desc, int power) : base(pc, desc)
         {
             Power = power;
-        }
-
-        public override void PrintToConsole()
-        {
-            Console.WriteLine("Power: " + Power);
         }
     }
 }

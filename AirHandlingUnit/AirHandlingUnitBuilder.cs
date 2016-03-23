@@ -9,28 +9,28 @@ namespace AirHandlingUnits
 {
     class AirHandlingUnitBuilder
     {
-        private static AirHandlingUnitBuilder instance;
-        private List<AirHandlingUnit> AllUnits = new List<AirHandlingUnit>(); 
+        private static AirHandlingUnitBuilder _instance;
+        private readonly List<AirHandlingUnit> _allUnits = new List<AirHandlingUnit>(); 
         private AirHandlingUnitBuilder(){ }
         public static AirHandlingUnitBuilder GetInstance()
         {
-            if (instance == null)
+            if (_instance == null)
             {
-                instance = new AirHandlingUnitBuilder();
+                _instance = new AirHandlingUnitBuilder();
             }
-            return instance;
+            return _instance;
         }
 
         internal AirHandlingUnit BuildCustomAirHandlingUnit(string desc, List<Part> parts)
         {
             var unit = new AirHandlingUnit(desc, parts);
-            AllUnits.Add(unit);
+            _allUnits.Add(unit);
             return unit;
         }
 
         internal AirHandlingUnitCollection GetAllAirHandlingUnits()
         {
-            return new AirHandlingUnitCollection(AllUnits);
+            return new AirHandlingUnitCollection(_allUnits);
         }
 
     }

@@ -200,7 +200,7 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\Main\airhandlingunits.js" />
-    <Content Include="Scripts\Main\backend.js" />
+    <Content Include="Scripts\Main\airhandlingunitagent.js" />
     <Content Include="Scripts\Main\filters.js" />
     <Content Include="Scripts\Main\fans.js" />
     <Content Include="Scripts\Main\heatexchangers.js" />

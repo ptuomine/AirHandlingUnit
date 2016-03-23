@@ -1,7 +1,7 @@
 ﻿var addNewRowToAirHandlingUnitList = function (unit) {
 
     var optiontext = unit.Description + " ( parts:";
-    var parts = unit.partcollection.Parts;
+    var parts = unit.Partcollection.Parts;
     if (parts) {
         $.each(parts, function (i, part) {
             optiontext = optiontext + part.ProductCode + " ";

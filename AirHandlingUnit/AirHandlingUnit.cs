@@ -14,27 +14,17 @@ namespace AirHandlingUnits
         [DataMember]
         public string Description { get; set; }
         [DataMember]
-        public readonly Parts.PartCollection partcollection;
+        public readonly Parts.PartCollection Partcollection;
 
         public AirHandlingUnit(List<Part> parts)
         {
-            this.partcollection = new Parts.PartCollection(parts);
+            this.Partcollection = new Parts.PartCollection(parts);
         }
 
         public AirHandlingUnit(string desc, List<Part> parts)
         {
             Description = desc;
-            this.partcollection = new Parts.PartCollection(parts);
-        }
-
-        internal void PrintToConsole()
-        {
-            var sortedparts = partcollection.Parts.OrderBy(p => p.ProductCode);
-
-            foreach (var part in sortedparts)
-            {
-                part.PrintToConsole();
-            }
+            this.Partcollection = new Parts.PartCollection(parts);
         }
     }
 }

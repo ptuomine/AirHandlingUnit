@@ -12,25 +12,16 @@ namespace AirHandlingUnits
     [KnownType(typeof(HeatExchanger))]
     public class HeatExchanger : PowerPart
     {
-        public static readonly HeatExchanger ShellHeatExchanger = new HeatExchanger(pc: "HE1", desc: "Shell heat exchanger", power: 200, type: HeatExchanger.HeatExchangerTypes.Shell);
-        public static readonly HeatExchanger TubeHeatExchanger = new HeatExchanger(pc: "HE2", desc: "Tube heat exchanger", power: 200, type: HeatExchanger.HeatExchangerTypes.Tube);
-
         public enum HeatExchangerTypes { Shell, Tube }
+
         [DataMember]
         public HeatExchangerTypes HeatExchangerType { get; set; }
 
+        // Default, public, parameterless constructor needed for Generics
         public HeatExchanger():base() { }
         public HeatExchanger(string pc, string desc, int power, HeatExchangerTypes type) : base(pc, desc, power)
         {
             this.HeatExchangerType = type;
         }
-
-        public override void PrintToConsole()
-        {
-            Console.WriteLine("HeatExchanger properties:");
-            base.PrintToConsole();
-            Console.WriteLine("Type:" + HeatExchangerType);
-        }
-
     }
 }
