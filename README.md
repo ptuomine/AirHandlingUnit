@@ -1,8 +1,9 @@
 # README #
 
-LIIKETOIMINTAKERROS JA GENEERISYYS:
-* Nyt on mahdollista luoda AirHandlingUnitteja millä tahansa kokoonpanolla tuetuista osista. 
-* Uuden osatyypin tekemiseen tarvittavaa työmäärää on myös minimoitu käyttämälle mm. Genericsiä. Tein Generic tyyppisen PartFactory<T> luokan joka osaa luoda tarvittavan tyyppisen osan reflectioniä käyttäen. 
+**# LIIKETOIMINTAKERROS JA GENEERISYYS: #**
+
+* * Nyt on mahdollista luoda AirHandlingUnitteja millä tahansa kokoonpanolla tuetuista osista. 
+* * Uuden osatyypin tekemiseen tarvittavaa työmäärää on myös minimoitu käyttämälle mm. Genericsiä. Tein 1. Generic tyyppisen PartFactory<T> luokan joka osaa luoda tarvittavan tyyppisen osan reflectioniä käyttäen. 
           - Uuden osatyypin tekeminen vaatii AirHandlingUnit projektiin vain uuden dataluokan sekä hyvin pienen päivityksen ProductCodeManager<T> luokkaan jossa pitää vain määritellä uuden osan tuotenumeron prefix. Sekin voitaisiin helposti hakea itse dataluokasta reflectionia käyttäen. 
 * Palvelukerrokseen tarvitaan myös uusi Web Api kontrolleri koska rajapinta on staattinen. Tämäkin voitaisiin generalisoida NameValue rakenteella.
 * UI kerrokseen tarvitaan päivitys Index.cshtml tiedostoon sekä uusi js tiedosto uuden osatyypin esittämiseen ja käsittelyyn. airhandlingunit.js tiedostoon pitää myös lisätä uuden osan valinta uunitin luonnissa. Tämä voitaisiin generalisoida meta tiedoilla jotka voitaisiin noutaa oman geneerisen .NET palvelun kautta esimerkiksi tietokannasta.
