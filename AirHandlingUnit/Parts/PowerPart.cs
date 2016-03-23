@@ -9,7 +9,7 @@ namespace AirHandlingUnits.Parts
 {
     [DataContract]
     [KnownType(typeof(PowerPart))]
-    public abstract class PowerPart : Part
+    public class PowerPart : Part
     {
         [DataMember]
         public int Power { get; set; }

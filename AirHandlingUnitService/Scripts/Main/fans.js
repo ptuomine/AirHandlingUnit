@@ -11,7 +11,7 @@ var addNewRowToFanList = function (fan) {
 
 var getAllFanParts = function () {
 
-    getAllFanPartsFromBackend().then(function (data) {
+    getAllPartsOfTypeFromBackend("Fan").then(function (data) {
 
         $("#FanList").empty();
         fanlist = [];
@@ -26,11 +26,13 @@ var getAllFanParts = function () {
 
 var addFan = function () {
 
-    var fan = {
-        description: $("#FanDescription").val(),
-        type: $("#FanType").val()
+    // This data must be in the same format as the FanController uses 
+    var data = {
+        Description: $("#FanDescription").val(),
+        FanType: $("#FanType").val()
     }
-    sendFanPartToBackend(fan).then(function () {
+
+    sendPartToBackend(data, "Fan").then(function () {
         getAllFanParts(); // Refresh list
     }); // Save to backend
 

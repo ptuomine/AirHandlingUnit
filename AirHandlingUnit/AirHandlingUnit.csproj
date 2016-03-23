@@ -5,10 +5,10 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{CD9FFCD4-0D2B-4031-B981-C723281FACEA}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AirHandlingUnit</RootNamespace>
-    <AssemblyName>ProgmanTest</AssemblyName>
+    <AssemblyName>AirHandlingUnit</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -49,7 +52,6 @@
     <Compile Include="AirHandlingUnitRepository.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="AirHandlingUnitCollection.cs" />
-    <Compile Include="Parts\HeatExchangerFactory.cs" />
     <Compile Include="Parts\PartCollection.cs" />
     <Compile Include="Parts\HeatExchangerCollection.cs" />
     <Compile Include="Parts\Part.cs" />
@@ -61,7 +63,6 @@
     <Compile Include="Parts\Fan.cs" />
     <Compile Include="Parts\ProductCodeManager.cs" />
     <Compile Include="Parts\PowerPart.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

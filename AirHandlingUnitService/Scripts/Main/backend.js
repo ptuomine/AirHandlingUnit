@@ -6,19 +6,11 @@
     return promise;
 };
 
-var getAllHeatExchangerPartsFromBackend = function () {
-
+var getAllPartsOfTypeFromBackend = function (parttype)
+{
+    var url = "api/"+parttype+"/GetAll";
     var promise = $.Deferred();
-    $.get("api/HeatExchanger/GetAll", function (data) {
-        promise.resolve(data.CustomHeatExchangers);
-    });
-    return promise;
-}
-
-var getAllFanPartsFromBackend = function () {
-
-    var promise = $.Deferred();
-    $.get("api/Fan/GetAll", function (data) {
+    $.get(url, function (data) {
         promise.resolve(data.Parts);
     });
     return promise;
@@ -48,15 +40,10 @@ var sendNewAirHanlingUnitToBackend = function (unit) {
     return promise;
 }
 
-var sendHeatExchangerPartToBackend = function (he) {
+var sendPartToBackend = function (data, parttype) {
 
     var promise = $.Deferred();
-    var data = {
-        Description: he.description,
-        Power: he.power,
-        HeatExchangerType: he.type
-    }
-    var url = "api/HeatExchanger/Get";
+    var url = "api/"+parttype+"/Get";
 
     $.ajax({
         url: url,
@@ -66,31 +53,7 @@ var sendHeatExchangerPartToBackend = function (he) {
             promise.resolve(response);
         },
         error: function (xhr) {
-            alert("save failed!" + xhr)
-            promise.reject(xhr);
-        }
-    });
-    return promise;
-}
-
-var sendFanPartToBackend = function (fan) {
-
-    var promise = $.Deferred();
-    var data = {
-        Description: fan.description,
-        FanType: fan.type
-    }
-    var url = "api/Fan/Get";
-
-    $.ajax({
-        url: url,
-        type: "get", //send it through get method
-        data: data,
-        success: function (response) {
-            promise.resolve(response);
-        },
-        error: function (xhr) {
-            alert("save failed!" + xhr)
+            alert("save failed!" + xhr);
             promise.reject(xhr);
         }
     });

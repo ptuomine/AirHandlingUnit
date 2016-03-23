@@ -5,28 +5,21 @@ using AirHandlingUnits.Parts;
 
 namespace AirHandlingUnit.Parts
 {
-    public class PartFactory<T>
+    public class PartFactory<T> where T:Part, new()
     {
-        //private static PartFactory<T> _instance;
-        private readonly ProductCodeManager _productCodeFactoryInstance;
+        // The two below declarations are for the generic singleton using Lazy creation of the instance
+        private static readonly Lazy<PartFactory<T>> instance = new Lazy<PartFactory<T>>(()=>new PartFactory<T>());
+        public static PartFactory<T> Instance { get { return instance.Value; } }
+
+        private readonly ProductCodeManager<T> _productCodeFactoryInstance;
         private readonly Dictionary<string, Part> _parts = new Dictionary<string, Part>();
         private readonly Type _parttype;
 
-        public PartFactory(string prefix)
+        PartFactory()
         {
             _parttype = typeof(T);
-            this._productCodeFactoryInstance = new ProductCodeManager(prefix: prefix);
-        } 
-
-        //public static PartFactory<T> GetInstance()
-        //{
-        //    if (_instance == null)
-        //    {
-        //        _instance = new PartFactory<T>();
-        //    }
-
-        //    return _instance;
-        //}
+            this._productCodeFactoryInstance = new ProductCodeManager<T>();
+        }
 
         public Part GetCustomPart(List<object> properties)
         {
@@ -43,7 +36,7 @@ namespace AirHandlingUnit.Parts
             properties.Insert(0, pc);
             var typename = _parttype.ToString();
 
-            var instance = (Part) System.Reflection.Assembly.GetExecutingAssembly().CreateInstance(
+            var customPart = (Part) System.Reflection.Assembly.GetExecutingAssembly().CreateInstance(
                 typeName: typename, // string including namespace of the type
                 ignoreCase: false,
                 bindingAttr: System.Reflection.BindingFlags.Default,
@@ -53,23 +46,9 @@ namespace AirHandlingUnit.Parts
                 activationAttributes: null
             );
 
-            _parts.Add(pc, instance);
+            _parts.Add(pc, customPart);
 
-            return instance;
-
-            // First try to find an instance with the given specifications
-            //var found = customHeatExchangers.Values.Where(he => he.Description == desc && he.Power == power && he.HeatExchangerType == type).FirstOrDefault();
-            //if (found != null)
-            //{
-            //    return found;
-            //}
-
-            // If not found then create one
-            //var pc = productCodeFactoryInstance.GetNewProductCode();
-            //var customHeatExchanger = new HeatExchanger(pc, desc, power, type);
-            //customHeatExchangers.Add(pc, customHeatExchanger);
-
-            //return customHeatExchanger;
+            return customPart;
         }
 
         public PartCollection GetAllCustomParts()

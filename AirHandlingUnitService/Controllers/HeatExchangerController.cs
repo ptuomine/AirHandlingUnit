@@ -28,30 +28,17 @@ namespace AirHandlingUnitService.Controllers
         }
 
         [HttpGet]
-        public HeatExchangerCollection GetAll()
+        public PartCollection GetAll()
         {
-            return repository.GetAllCustomHeatExchangers();
+            return repository.GetAllCustomParts<HeatExchanger>();
         }
 
         [HttpGet]
         public HeatExchanger Get([FromUri]HeatExchangerRequest request)
         {
-            return repository.GetCustomHeatExchanger(request.Description, request.Power, request.HeatExchangerType);
+            var partslist = new List<Object> {request.Description, request.Power, request.HeatExchangerType};
+            return (HeatExchanger) repository.GetCustomPart<HeatExchanger>(partslist);
         }
 
-        // POST api/<controller>
-        public void Post([FromBody]string value)
-        {
-        }
-
-        // PUT api/<controller>/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE api/<controller>/5
-        public void Delete(int id)
-        {
-        }
     }
 }

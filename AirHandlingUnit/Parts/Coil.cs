@@ -10,6 +10,7 @@ namespace AirHandlingUnits.Parts
     public class Coil : PowerPart
     {
         // Use the factory methods to get Coil objects
+        public Coil() { }
         private Coil(string pc, string desc, int power) : base(pc, desc, power)
         {
         }

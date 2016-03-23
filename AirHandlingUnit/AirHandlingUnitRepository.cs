@@ -10,22 +10,16 @@ namespace AirHandlingUnits
 {
     public class AirHandlingUnitRepository
     {
-        private readonly PartFactory<Fan> _fanFactory = new PartFactory<Fan>(prefix: "FAN"); 
-
-        private readonly HeatExchangerFactory heatExchangerFactoryInstance = HeatExchangerFactory.GetInstance();
-        private static AirHandlingUnitRepository instance;
-        private AirHandlingUnitRepository()
-        {
-
-        }
+        private static AirHandlingUnitRepository _instance;
+        private AirHandlingUnitRepository(){}
 
         public static AirHandlingUnitRepository GetInstance()
         {
-            if (instance == null)
+            if (_instance == null)
             {
-                instance = new AirHandlingUnitRepository();
+                _instance = new AirHandlingUnitRepository();
             }
-            return instance;
+            return _instance;
         }
 
         public AirHandlingUnit CreateNewAirHandlingUnit(string description, List<Part> parts)
@@ -37,25 +31,16 @@ namespace AirHandlingUnits
             return AirHandlingUnitBuilder.GetInstance().GetAllAirHandlingUnits();
         }
 
-        public PartCollection GetAllCustomFans()
+        public PartCollection GetAllCustomParts<T>() where T:Part, new()
         {
-            return _fanFactory.GetAllCustomParts();
+            var factory = PartFactory<T>.Instance;
+            return factory.GetAllCustomParts();
         }
 
-        public Fan GetCustomFan(string description, Fan.FanTypes type)
+        public Part GetCustomPart<T>(List<Object> properties) where T:Part, new()
         {
-            var properties = new List<Object> { description, type };
-            return (Fan) _fanFactory.GetCustomPart(properties);
-        }
-
-        public HeatExchangerCollection GetAllCustomHeatExchangers()
-        {
-            return heatExchangerFactoryInstance.GetAllCustomHeatExchangers();
-        }
-
-        public HeatExchanger GetCustomHeatExchanger(string description, int power, HeatExchanger.HeatExchangerTypes heatExchangerType)
-        {
-            return heatExchangerFactoryInstance.GetCustomHeatExchanger(description, power, heatExchangerType);
+            var factory = PartFactory<T>.Instance;
+            return factory.GetCustomPart(properties);
         }
     }
 }

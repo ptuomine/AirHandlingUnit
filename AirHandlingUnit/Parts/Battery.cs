@@ -10,6 +10,7 @@ namespace AirHandlingUnits.Parts
     public class Battery : Part
     {
         public int Capacity { get; set; }
+        public Battery() { }
 
         private Battery(string pc, string desc, int capacity) : base(pc, desc)
         {

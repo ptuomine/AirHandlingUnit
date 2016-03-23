@@ -15,6 +15,8 @@ namespace AirHandlingUnits.Parts
         [DataMember]
         public FanTypes FanType { get; set; }
 
+        public Fan() { }
+
         public Fan(string pc, string desc, FanTypes fantype) : base(pc, desc)
         {
             this.FanType = fantype;

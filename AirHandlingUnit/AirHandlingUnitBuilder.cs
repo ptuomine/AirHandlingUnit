@@ -33,42 +33,5 @@ namespace AirHandlingUnits
             return new AirHandlingUnitCollection(AllUnits);
         }
 
-        private List<Part> TwoFanUnitParts()
-        {
-            var parts = new List<Part>();
-            parts.Add(Fan.GetTheBoxFan());
-            parts.Add(Fan.GetTheFloorFan());
-            parts.Add(Filter.GetTheShortFilter());
-            parts.Add(Filter.GetTheLongFilter());
-            parts.Add(Coil.GetTheHighPowerCoil());
-            parts.Add(HeatExchangerFactory.GetShellHeatExchanger());
-
-            return parts;
-        }
-
-        private List<Part> ThreeFanUnitParts()
-        {
-            var parts = TwoFanUnitParts();
-            parts.Add(Fan.GetTheBoxFan());
-
-            return parts;
-        }
-
-        public AirHandlingUnit BuildTwoFanUnit()
-        {
-            return new AirHandlingUnit(TwoFanUnitParts());
-        }
-
-        public AirHandlingUnit BuildThreeFanUnit()
-        {
-            return new AirHandlingUnit(ThreeFanUnitParts());
-        }
-
-        public AirHandlingUnit BuildThreeFanUnitWithBattery()
-        {
-            var parts = ThreeFanUnitParts();
-                parts.Add(Battery.GetHighCapacityBattery());
-            return new AirHandlingUnit(parts);
-        }
     }
 }

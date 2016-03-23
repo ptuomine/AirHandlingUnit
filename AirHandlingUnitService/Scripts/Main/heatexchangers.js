@@ -11,7 +11,7 @@ var addNewRowToHeatExchangerList = function (he) {
 
 var getAllHeatExchangerParts = function () {
 
-    getAllHeatExchangerPartsFromBackend().then(function (data) {
+    getAllPartsOfTypeFromBackend("HeatExchanger").then(function (data) {
 
         $("#HeatExchangerList").empty();
         heatexchangerlist = [];
@@ -26,12 +26,14 @@ var getAllHeatExchangerParts = function () {
 
 var addHeatExchangerPart = function () {
 
-    var he = {
-        description: $("#HeatExchangerDescription").val(),
-        power: $("#HeatExchangerPower").val(),
-        type: $("#selectHeatExchangerType").val()
+    // This data must be in the same format as the HeatExchangerController uses 
+    var data = {
+        Description: $("#HeatExchangerDescription").val(),
+        Power: $("#HeatExchangerPower").val(),
+        HeatExchangerType: $("#selectHeatExchangerType").val()
     }
-    sendHeatExchangerPartToBackend(he).then(function () {
+
+    sendPartToBackend(data, "HeatExchanger").then(function () {
         getAllHeatExchangerParts(); // Refresh list
     }); // Save to backend
 

@@ -10,6 +10,10 @@ namespace AirHandlingUnits.Parts
     {
         public int Length { get; set; }
 
+        public Filter()
+        {
+        }
+
         private Filter(string pc, string desc, int length) : base(pc, desc)
         {
             this.Length = length;
