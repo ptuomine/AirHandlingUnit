@@ -7,7 +7,8 @@ var getHeatExchangerFromCache = function(index) {
 var heatexchangertypes = ["Shell", "Tube"];
 
 var addNewRowToHeatExchangerList = function (he) {
-    var html = "<option>" + he.ProductCode + " (desc:" + he.Description + "; type:" + heatexchangertypes[he.HeatExchangerType] + ")</option>";
+    var optiontext = he.ProductCode + " (desc:" + he.Description + "; type:" + heatexchangertypes[he.HeatExchangerType] + "; power:" + he.Power;
+    var html = "<option title='" + optiontext + "'>" + optiontext + ")</option>";
     $("#HeatExchangerList").append(html);
 }
 

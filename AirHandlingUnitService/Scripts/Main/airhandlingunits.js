@@ -8,7 +8,7 @@
         });
     }
     optiontext = optiontext + ")";
-    var html = "<option>" + optiontext + "</option>";
+    var html = "<option title='" + optiontext + "'>" + optiontext + "</option>";
     $("#AirHandlingUnitList").append(html);
 }
 

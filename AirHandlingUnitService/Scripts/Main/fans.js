@@ -7,7 +7,9 @@ var getFanFromCache = function(index) {
 var fantypes = ["Box", "Floor"];
 
 var addNewRowToFanList = function (fan) {
-    var html = "<option>" + fan.ProductCode + " (desc:" + fan.Description + "; type:" + fantypes[fan.FanType] + ")</option>";
+
+    var optiontext = fan.ProductCode + " (desc:" + fan.Description + "; type:" + fantypes[fan.FanType]
+    var html = "<option title='"+optiontext+"'>" + optiontext + ")</option>";
     $("#FanList").append(html);
 }
 
@@ -31,7 +33,7 @@ var addFan = function () {
     // This data must be in the same format as the FanController uses 
     var data = {
         Description: $("#FanDescription").val(),
-        FanType: $("#FanType").val()
+        FanType: $("#selectFanType").val()
     }
 
     sendPartToBackend(data, "Fan").then(function () {

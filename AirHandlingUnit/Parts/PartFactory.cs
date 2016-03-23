@@ -23,7 +23,7 @@ namespace AirHandlingUnit.Parts
 
         public Part GetCustomPart(List<object> properties)
         {
-            // First try to find an instance with the given specifications
+            // First try to find an instance with the given specifications. This feature is commented out as it needs an new generic implementation.
             //var found = _parts.Values.Where(he => he.Description == desc && he.Power == power && he.HeatExchangerType == type).FirstOrDefault();
             //if (found != null)
             //{

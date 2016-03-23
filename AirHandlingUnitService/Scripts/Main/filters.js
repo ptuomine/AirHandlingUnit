@@ -5,7 +5,8 @@ var getFilterFromCache = function(index) {
 }
 
 var addNewRowToFilterList = function (filter) {
-    var html = "<option>" + filter.ProductCode + " (desc:" + filter.Description + "; length:" + filter.Length + ")</option>";
+    var optiontext = filter.ProductCode + " (desc:" + filter.Description + "; length:" + filter.Length;
+    var html = "<option title='" + optiontext + "'>" + optiontext + ")</option>";
     $("#FilterList").append(html);
 }
 
