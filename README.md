@@ -17,16 +17,16 @@
 * JavaScript moduulien geneerisyyttä on mietitty mutta geneerisyyden olisi voinut viedä vielä paljon pidemmällekin. 
 
 ## DATA KERROS: ##
-•	Data kerrosta ei ole ja siten tietoa ei persistoida. Jos vielä innostusta riittää niin lisää uuden DataLayer projektin jossa käytän Entity Frameworkiä josta minulla on kokemusta.
+* Data kerrosta ei ole ja siten tietoa ei persistoida. Jos vielä innostusta riittää niin lisää uuden DataLayer projektin jossa käytän Entity Frameworkiä josta minulla on kokemusta.
 
 ## VIRHEENKÄSITELY JA LOGGAUS: ##
-•	Ei ole toteutettu mutta tähän voisi käyttää esim. Log4Net:tiä
-•	Aspect Oriented Programming tyyppistä ohjelmointia tukevaa PostSharp tyyppistä laajennusta voisi myös hyödyntää
+* Ei ole toteutettu mutta tähän voisi käyttää esim. Log4Net:tiä
+* Aspect Oriented Programming tyyppistä ohjelmointia tukevaa PostSharp tyyppistä laajennusta voisi myös hyödyntää
 
 ## UNIT TEST: ##
-•	Lisäsin Unit test projektin testausta varten (komentorivin sijaan)
-•	Testejä on nyt hyvin puutteellisesti
-•	JavaScript testejä ei ole ollenkaan. Tähän käyttäisin jasmine frameworkiä koska se tukee Requirejs:ää.
+* Lisäsin Unit test projektin testausta varten (komentorivin sijaan)
+* Testejä on nyt hyvin puutteellisesti
+* JavaScript testejä ei ole ollenkaan. Tähän käyttäisin jasmine frameworkiä koska se tukee Requirejs:ää.
 
 ## KOMMENTIT: ##
-•	Ohjelmakoodissa on nyt niukasti kommentteja ja niitä pitäisi lisätä
+* Ohjelmakoodissa on nyt niukasti kommentteja ja niitä pitäisi lisätä
