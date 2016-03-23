@@ -158,6 +158,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AirHandlingUnitController.cs" />
+    <Compile Include="Controllers\FilterController.cs" />
     <Compile Include="Controllers\FanController.cs" />
     <Compile Include="Controllers\HeatExchangerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -200,6 +201,7 @@
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\Main\airhandlingunits.js" />
     <Content Include="Scripts\Main\backend.js" />
+    <Content Include="Scripts\Main\filters.js" />
     <Content Include="Scripts\Main\fans.js" />
     <Content Include="Scripts\Main\heatexchangers.js" />
     <Content Include="Scripts\Main\main.js" />

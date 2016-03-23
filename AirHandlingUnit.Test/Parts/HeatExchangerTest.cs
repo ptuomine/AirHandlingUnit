@@ -21,6 +21,12 @@ namespace AirHandlingUnits.Test
             return (HeatExchanger) PartFactory<HeatExchanger>.Instance.GetCustomPart(partslist);
         }
 
+        private Filter AddNewFilter()
+        {
+            var partslist = new List<Object> { "My Filter", 100 };
+            return (Filter)PartFactory<Filter>.Instance.GetCustomPart(partslist);
+        }
+
         [TestMethod]
         public void TestGetAllCustomParts_HeatExchanger_Method()
         {
@@ -48,6 +54,17 @@ namespace AirHandlingUnits.Test
             Assert.IsNotNull(fan);
             Assert.IsNotNull(all);
             Assert.IsTrue(all.Parts.Contains(fan));
+        }
+
+        [TestMethod]
+        public void TestGetAllCustomParts_Filter_Method()
+        {
+            var filter = AddNewFilter();
+            var all = PartFactory<Filter>.Instance.GetAllCustomParts();
+
+            Assert.IsNotNull(filter);
+            Assert.IsNotNull(all);
+            Assert.IsTrue(all.Parts.Contains(filter));
         }
 
         //[TestMethod]

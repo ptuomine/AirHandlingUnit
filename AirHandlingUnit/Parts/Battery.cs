@@ -12,7 +12,7 @@ namespace AirHandlingUnits.Parts
         public int Capacity { get; set; }
         public Battery() { }
 
-        private Battery(string pc, string desc, int capacity) : base(pc, desc)
+        public Battery(string pc, string desc, int capacity) : base(pc, desc)
         {
             this.Capacity = capacity;
         }

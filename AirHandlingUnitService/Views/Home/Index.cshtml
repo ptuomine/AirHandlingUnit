@@ -2,6 +2,7 @@
 <script src="Scripts/jquery-1.10.2.min.js"></script>
 <script src="Scripts/bootstrap.min.js"></script>
 <script src="Scripts/Main/airhandlingunits.js"></script>
+<script src="Scripts/Main/filters.js"></script>
 <script src="Scripts/Main/heatexchangers.js"></script>
 <script src="Scripts/Main/fans.js"></script>
 <script src="Scripts/Main/backend.js"></script>
@@ -69,7 +70,9 @@
                 <h3 class="panel-title">Filters</h3><br />
                 <div>
                     <span>Description:</span><br />
-                    <input id="FilterDescription" type="text" /><br />
+                    <input id="FilterDescription" type="text"/><br/>
+                    Length:<br />
+                    <input id="FilterLength" type="text" /><br />
                 </div><br />
                 <p><a class="btn btn-default btn-sm" onClick="addFilter()">Add New</a></p>
                 <select id="FilterList" multiple size="10"></select>
