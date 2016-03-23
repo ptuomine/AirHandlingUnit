@@ -11,10 +11,10 @@
 * Koko sovellus voitaisiin rakentaa meta data pohjaisesti jolloin mitään koodia ei tarvitse muuttaa tai lisätä kun halutaan luoda uusia osatyyppejä. Tämä on hyvin t* uttua nykyisessä työssäni. 
 
 ## UI KERROS: ##
-•	Lisäsin Front-End projektin joka sisältää Web Api rajapinnan sekä UI:n.
-•	UI demonstroi miten uusien erityyppisten Air Handling Unitien luominen lennosta on nyt mahdollista. Voit valita mitä tahansa osia ja luoda siitä Unitin.
-•	UI: toteutus ja ulkoasu on hyvin yksinkertainen eikä edusta osaamiani tekniikoita. Jos tuota kehittäisin lisää niin käyttäisin Requirejs:ää moduulien käsittelyyn ja Knockout kirjastoa data bindingiin jotka ovat minulle hyvin tuttuja. AngularJs olisi myös hyvä vaihtoehto jota olen myös käyttänyt yhdessä projektissa. KendoUI olisi omiaan tekemään käyttöliittymästä vaikuttavan.
-•	JavaScript moduulien geneerisyyttä on mietitty mutta geneerisyyden olisi voinut viedä vielä paljon pidemmällekin. 
+* Lisäsin Front-End projektin joka sisältää Web Api rajapinnan sekä UI:n.
+* UI demonstroi miten uusien erityyppisten Air Handling Unitien luominen lennosta on nyt mahdollista. Voit valita mitä tahansa osia ja luoda siitä Unitin.
+* UI:n toteutus ja ulkoasu on hyvin yksinkertainen eikä edusta osaamiani tekniikoita. Jos tuota kehittäisin lisää niin käyttäisin Requirejs:ää moduulien käsittelyyn ja Knockout kirjastoa data bindingiin jotka ovat minulle hyvin tuttuja. AngularJs olisi myös hyvä vaihtoehto jota olen myös käyttänyt yhdessä projektissa. KendoUI olisi omiaan tekemään käyttöliittymästä vaikuttavan.
+* JavaScript moduulien geneerisyyttä on mietitty mutta geneerisyyden olisi voinut viedä vielä paljon pidemmällekin. 
 
 ## DATA KERROS: ##
 •	Data kerrosta ei ole ja siten tietoa ei persistoida. Jos vielä innostusta riittää niin lisää uuden DataLayer projektin jossa käytän Entity Frameworkiä josta minulla on kokemusta.
