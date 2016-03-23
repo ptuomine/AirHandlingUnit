@@ -1,11 +1,11 @@
 ﻿var filterlist = [];
 
-var getFanFromCache = function(index) {
+var getFilterFromCache = function(index) {
     return filterlist[index];
 }
 
 var addNewRowToFilterList = function (filter) {
-    var html = "<option>" + filter.ProductCode + " (" + filter.Description + ")</option>";
+    var html = "<option>" + filter.ProductCode + " (desc:" + filter.Description + "; length:" + filter.Length + ")</option>";
     $("#FilterList").append(html);
 }
 
@@ -29,7 +29,7 @@ var addFilter = function () {
     // This data must be in the same format as the FilterController uses 
     var data = {
         Description: $("#FilterDescription").val(),
-        FanType: $("#FilterLength").val()
+        Length: $("#FilterLength").val()
     }
 
     sendPartToBackend(data, "Filter").then(function () {

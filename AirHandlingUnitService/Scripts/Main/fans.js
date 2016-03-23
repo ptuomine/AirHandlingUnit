@@ -4,8 +4,10 @@ var getFanFromCache = function(index) {
     return fanlist[index];
 }
 
+var fantypes = ["Box", "Floor"];
+
 var addNewRowToFanList = function (fan) {
-    var html = "<option>" + fan.ProductCode + " (" + fan.Description + ")</option>";
+    var html = "<option>" + fan.ProductCode + " (desc:" + fan.Description + "; type:" + fantypes[fan.FanType] + ")</option>";
     $("#FanList").append(html);
 }
 

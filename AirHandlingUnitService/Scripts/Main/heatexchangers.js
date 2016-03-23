@@ -4,8 +4,10 @@ var getHeatExchangerFromCache = function(index) {
     return heatexchangerlist[index];
 }
 
+var heatexchangertypes = ["Shell", "Tube"];
+
 var addNewRowToHeatExchangerList = function (he) {
-    var html = "<option>" + he.ProductCode + " (" + he.Description + ")</option>";
+    var html = "<option>" + he.ProductCode + " (desc:" + he.Description + "; type:" + heatexchangertypes[he.HeatExchangerType] + ")</option>";
     $("#HeatExchangerList").append(html);
 }
 
